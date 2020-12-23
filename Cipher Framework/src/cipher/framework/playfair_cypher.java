@@ -6,6 +6,7 @@
 package cipher.framework;
 
 import java.awt.RenderingHints.Key;
+import javax.xml.transform.Source;
 
 /**
  *
@@ -120,14 +121,104 @@ public class playfair_cypher implements Cipher_Interface {
         return key;
     }
     
-
-    @Override
-    public void encrypt() {
-        
+    /**
+     *
+     * @return
+     */
+    public String encrypt() {
+        String src_arr[] = Divid2Pairs(Source);
+        String Code = new String();
+        char one;
+        char two;
+        int part1[] = new int[2];
+        int part2[] = new int[2];
+        for (int i = 0; i < src_arr.length; i++)
+        {
+            one = src_arr[i].charAt(0);
+            two = src_arr[i].charAt(1);
+            part1 = GetDiminsions(one);
+            part2 = GetDiminsions(two);
+            if (part1[0] == part2[0])
+            {
+                if (part1[1] < 4)
+                    part1[1]++;
+                else
+                    part1[1] = 0;
+                if (part2[1] < 4)
+                    part2[1]++;
+                else
+                    part2[1] = 0;
+            }
+            else if (part1[1] == part2[1])
+            {
+                if (part1[0] < 4)
+                    part1[0]++;
+                else
+                    part1[0] = 0;
+                if (part2[0] < 4)
+                    part2[0]++;
+                else
+                    part2[0] = 0;
+            }
+            else
+            {
+                int temp = part1[1];
+                part1[1] = part2[1];
+                part2[1] = temp;
+            }
+            Code = Code + matrix_arr[part1[0]][part1[1]]
+                    + matrix_arr[part2[0]][part2[1]];
+        }
+        return Code;
     }
 
     @Override
-    public void decrypt() {
+    public String decrypt() {
+        String Original = new String();
+        String src_arr[] = Divid2Pairs(Code);
+        char one;
+        char two;
+        int part1[] = new int[2];
+        int part2[] = new int[2];
+        for (int i = 0; i < src_arr.length; i++)
+        {
+            one = src_arr[i].charAt(0);
+            two = src_arr[i].charAt(1);
+            part1 = GetDiminsions(one);
+            part2 = GetDiminsions(two);
+            if (part1[0] == part2[0])
+            {
+                if (part1[1] > 0)
+                    part1[1]--;
+                else
+                    part1[1] = 4;
+                if (part2[1] > 0)
+                    part2[1]--;
+                else
+                    part2[1] = 4;
+            }
+            else if (part1[1] == part2[1])
+            {
+                if (part1[0] > 0)
+                    part1[0]--;
+                else
+                    part1[0] = 4;
+                if (part2[0] > 0)
+                    part2[0]--;
+                else
+                    part2[0] = 4;
+            }
+            else
+            {
+                int temp = part1[1];
+                part1[1] = part2[1];
+                part2[1] = temp;
+            }
+            Original = Original + matrix_arr[part1[0]][part1[1]]
+                    + matrix_arr[part2[0]][part2[1]];
+        }
+        return Original;
+
         
     }
 
