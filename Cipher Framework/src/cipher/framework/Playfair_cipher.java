@@ -9,7 +9,7 @@ package cipher.framework;
  *
  * @author Omer & MIKS
  */
-public abstract class playfair_cypher implements Cipher_Interface {
+public abstract class Playfair_cipher implements Cipher_Interface {
 
     private char matrix_arr[][] = new char[5][5];
      String KeyWord = new String();
@@ -18,7 +18,7 @@ public abstract class playfair_cypher implements Cipher_Interface {
      String Key = new String();
      String Original = new String();
 
-    public playfair_cypher() { }
+    public Playfair_cipher() { }
     
     @Override
     public void generate_key() {
@@ -121,10 +121,6 @@ public abstract class playfair_cypher implements Cipher_Interface {
         return key;
     }
     
-    /**
-     *
-     * @return
-     */
     @Override
     public String encrypt() {
         String src_arr[] = Divid2Pairs(Source);

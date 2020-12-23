@@ -5,6 +5,8 @@
  */
 package cipher.framework;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Omer and MIKS
@@ -16,11 +18,29 @@ public class CipherFramework {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        playfair_cypher pf;
-        pf = new playfair_cypher() {};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please Select the Cipher technique you want to run");
+        System.out.println("Press 1 for PlayFair Cipher");
+        System.out.println("Press 2 for Hill Cipher");
+        System.out.println("\n\n Enter your option: ");
+        int val = sc.nextInt();
+        
+        if (val == 1) {
+        Playfair_cipher pf;
+        pf = new Playfair_cipher() {};
         pf.generate_key();
         pf.encrypt();
         pf.decrypt();
+        }
+        else if (true) {
+            
+        }
+        else{
+            System.out.println("Press any key to Exit");
+        }
+        
+        
+            
         
     }
     
