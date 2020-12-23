@@ -5,9 +5,6 @@
  */
 package cipher.framework;
 
-import java.awt.RenderingHints.Key;
-import javax.xml.transform.Source;
-
 /**
  *
  * @author Omer & MIKS
@@ -16,7 +13,10 @@ public class playfair_cypher implements Cipher_Interface {
 
     private char matrix_arr[][] = new char[5][5];
      String KeyWord = new String();
+     String Code = new String();
+     String Source = new String();
      String Key = new String();
+     String Original = new String();
 
     public playfair_cypher() { }
     
@@ -125,9 +125,10 @@ public class playfair_cypher implements Cipher_Interface {
      *
      * @return
      */
+    @Override
     public String encrypt() {
         String src_arr[] = Divid2Pairs(Source);
-        String Code = new String();
+        
         char one;
         char two;
         int part1[] = new int[2];
@@ -174,7 +175,7 @@ public class playfair_cypher implements Cipher_Interface {
 
     @Override
     public String decrypt() {
-        String Original = new String();
+       
         String src_arr[] = Divid2Pairs(Code);
         char one;
         char two;
