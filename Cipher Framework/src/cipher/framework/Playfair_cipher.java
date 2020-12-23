@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cipher.framework;
 
 /**
  *
  * @author Omer & MIKS
  */
-public abstract class Playfair_cipher implements Cipher_Interface {
+public class Playfair_cipher implements Cipher_Interface {
 
     private char matrix_arr[][] = new char[5][5];
      String KeyWord = new String();
-     String Code = new String();
-     String Source = new String();
      String Key = new String();
      String Original = new String();
 
@@ -45,6 +38,28 @@ public abstract class Playfair_cipher implements Cipher_Interface {
         matrix();
     }
  
+    
+    public void setKey(String k)
+    {
+        String K_adjust = new String();
+        boolean flag = false;
+        K_adjust = K_adjust + k.charAt(0);
+        for (int i = 1; i < k.length(); i++)
+        {
+            for (int j = 0; j < K_adjust.length(); j++)
+            {
+                if (k.charAt(i) == K_adjust.charAt(j))
+                {
+                    flag = true;
+                }
+            }
+            if (flag == false)
+                K_adjust = K_adjust + k.charAt(i);
+            flag = false;
+        }
+        KeyWord = K_adjust;
+    }
+    
     private void matrix(){
         int counter = 0;
         for (int i = 0; i < 5; i++)
@@ -121,10 +136,9 @@ public abstract class Playfair_cipher implements Cipher_Interface {
         return key;
     }
     
-    @Override
-    public String encrypt() {
-        String src_arr[] = Divid2Pairs(Source);
-        
+    public String encrypt(String Source) {
+       String src_arr[] = Divid2Pairs(Source);
+        String Code = new String();
         char one;
         char two;
         int part1[] = new int[2];
@@ -169,9 +183,8 @@ public abstract class Playfair_cipher implements Cipher_Interface {
         return Code;
     }
 
-    @Override
-    public String decrypt() {
-       
+    public String decrypt(String Code) {
+        String Original = new String();
         String src_arr[] = Divid2Pairs(Code);
         char one;
         char two;
@@ -215,9 +228,8 @@ public abstract class Playfair_cipher implements Cipher_Interface {
                     + matrix_arr[part2[0]][part2[1]];
         }
         return Original;
-
-        
     }
+
 
     @Override
     public void cryptoanalysis() {

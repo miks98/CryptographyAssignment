@@ -26,10 +26,14 @@ public class CipherFramework {
         int val = sc.nextInt();
         
         if (val == 1) {
-        Playfair_cipher pf;
-        pf = new Playfair_cipher() {};
+        Cipher_Interface cf = new Playfair_cipher();
+        System.out.println("Enter Keyword");
+        String k =sc.next();
+        pf.setKey(k);
         pf.generate_key();
-        pf.encrypt();
+        System.out.println("Enter Text to Encrypt");
+        String text_e =sc.next();
+        pf.encrypt(text_e);
         pf.decrypt();
         }
         else if (true) {
