@@ -9,7 +9,7 @@ package cipher.framework;
  *
  * @author Omer & MIKS
  */
-public class Hill_cypher implements Cipher_Interface {
+public abstract class Hill_cypher implements Cipher_Interface {
 
     @Override
     public void generate_key() {
@@ -17,12 +17,14 @@ public class Hill_cypher implements Cipher_Interface {
     }
 
     @Override
-    public void encrypt() {
+    public String encrypt() {
+        return null;
         
     }
 
     @Override
-    public void decrypt() {
+    public String decrypt() {
+        return null;
         
     }
 
