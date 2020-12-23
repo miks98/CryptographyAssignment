@@ -13,8 +13,8 @@ public interface Cipher_Interface {
     
     
 public  void generate_key();
-public  void encrypt();
-public  void decrypt();
+public  String encrypt();
+public  String decrypt();
 public  void cryptoanalysis();
 
 

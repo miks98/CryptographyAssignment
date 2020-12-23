@@ -9,7 +9,7 @@ package cipher.framework;
  *
  * @author Omer & MIKS
  */
-public class playfair_cypher implements Cipher_Interface {
+public abstract class playfair_cypher implements Cipher_Interface {
 
     private char matrix_arr[][] = new char[5][5];
      String KeyWord = new String();
@@ -225,7 +225,7 @@ public class playfair_cypher implements Cipher_Interface {
 
     @Override
     public void cryptoanalysis() {
-        
+        System.out.println("Hello World");
     }
     
 }

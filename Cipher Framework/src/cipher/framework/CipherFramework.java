@@ -16,7 +16,8 @@ public class CipherFramework {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        playfair_cypher pf= new playfair_cypher();
+        playfair_cypher pf;
+        pf = new playfair_cypher() {};
         pf.generate_key();
         pf.encrypt();
         pf.decrypt();
