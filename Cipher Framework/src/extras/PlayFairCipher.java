@@ -12,9 +12,9 @@ import java.util.Scanner;
  */
 public class PlayFairCipher
 {
-    private String KeyWord        = new String();
-    private String Key            = new String();
-    private char   matrix_arr[][] = new char[5][5];
+    private String KeyWord = new String();
+    private String Key = new String();
+    private char matrix_arr[][] = new char[5][5];
  
     public void setKey(String k)
     {
