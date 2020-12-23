@@ -2,11 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Omer/Documents/NetBeansProjects/Cipher%20Framework/src/cipher/framework/CipherFramework.java</file>
-            <file>file:/C:/Users/Omer/Documents/NetBeansProjects/Cipher%20Framework/src/cipher/framework/playfair_cypher.java</file>
-            <file>file:/C:/Users/Omer/Documents/NetBeansProjects/Cipher%20Framework/src/cipher/framework/Hill_cypher.java</file>
-            <file>file:/C:/Users/Omer/Documents/NetBeansProjects/Cipher%20Framework/src/cipher/framework/Cipher_Interphase.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
