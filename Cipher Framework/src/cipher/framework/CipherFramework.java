@@ -1,5 +1,7 @@
 package cipher.framework;
 // @author Omer & MIKS
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -41,28 +43,19 @@ public class CipherFramework {
         System.out.println("The Decrypted Text is    "+pd);
         System.out.println("==============================================");
         }
-      /*  else if (val == 2) {
+        else if (val == 2) {
         
         
-        System.out.println("Enter Keyword");
-        String hk =sc.next();
-       // hf.setKey(hk);
-        hf.generate_key();
-        System.out.println("Enter Text to Encrypt");
-        String text_he =sc.next();
-        hf.encrypt(text_he);
-        
-        System.out.println("Enter Text to Decrypt");
-        String text_hd =sc.next();
-        hf.decrypt(text_hd);
-        }*/
+        Hill_cipher obj = new Hill_cipher() {};
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        }
+
         else{
-            System.out.println("Press any key to Exit");
+            System.out.println("Error Encountered");
         }
         
         
             
         
     }
-    
 }
