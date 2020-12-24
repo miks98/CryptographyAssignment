@@ -229,7 +229,6 @@ public class Playfair_cipher implements Cipher_Interface {
 
     @Override
     public void cryptoanalysis() {
-        System.out.println("Hello World");
     }
     
 }
