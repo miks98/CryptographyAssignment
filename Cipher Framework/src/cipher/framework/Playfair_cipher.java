@@ -1,9 +1,5 @@
 package cipher.framework;
-
-/**
- *
- * @author Omer & MIKS
- */
+// @author Omer & MIKS
 public class Playfair_cipher implements Cipher_Interface {
 
     private char matrix_arr[][] = new char[5][5];

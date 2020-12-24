@@ -1,29 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cipher.framework;
-
-/**
- *
- * @author Omer & MIKS
- */
+// @author Omer & MIKS
 public abstract class Hill_cipher implements Cipher_Interface {
 
     @Override
     public void generate_key() {
         
+        
+        
     }
 
     @Override
-    public String encrypt() {
+    public String encrypt(String Source) {
+        
         return null;
         
     }
 
     @Override
-    public String decrypt() {
+    public String decrypt(String Code) {
+        
         return null;
         
     }
@@ -31,6 +26,10 @@ public abstract class Hill_cipher implements Cipher_Interface {
     @Override
     public void cryptoanalysis() {
         
+        
+        
     }
+
+    
     
 }
