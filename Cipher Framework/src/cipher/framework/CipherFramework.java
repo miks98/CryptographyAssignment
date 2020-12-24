@@ -1,6 +1,7 @@
 package cipher.framework;
 // @author Omer & MIKS
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class CipherFramework {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         System.out.println("==============================================");
@@ -48,14 +49,29 @@ public class CipherFramework {
         
         Hill_cipher obj = new Hill_cipher() {};
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the line: ");
+        String line = in.readLine();
+        System.out.println("Enter the key: ");
+        String key = in.readLine();
+        double sq = Math.sqrt(key.length());
+        if (sq != (long) sq)
+            System.out
+                    .println("Invalid key length!!! Does not form a square matrix...");
+        else
+        {
+            int s = (int) sq;
+            if (obj.check(key, s))
+            {
+                System.out.println("Result:");
+                obj.divide(line, s);
+                obj.cofact(obj.keymatrix, s);
+            }
+        }
+        
         }
 
         else{
             System.out.println("Error Encountered");
         }
-        
-        
-            
-        
     }
 }
